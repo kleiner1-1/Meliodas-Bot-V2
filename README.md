@@ -4,7 +4,7 @@
 ---
 
 <p align="center">
-  <img src="https://files.catbox.moe/hnif5j.jpg" alt="Kirito Bot MD Logo">
+  <img src="https://qu.ax/iZYvt.png" alt="Meliodas Bot MD Logo">
 </p>
 
 ---
