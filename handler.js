@@ -239,7 +239,7 @@ m.text = ''
 let _user = global.db.data && global.db.data.users && global.db.data.users[m.sender]
 
 const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net';
-const isROwner = [...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
+//const isROwner = [...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
 const isOwner = isROwner || m.fromMe
 const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
 //const isPrems = isROwner || global.prems.map(v => v.replace(/[^0-9]/g, '') + detectwhat).includes(m.sender)
@@ -519,8 +519,8 @@ if (m.plugin in stats) {
 stat = stats[m.plugin]
 if (!isNumber(stat.total))
 stat.total = 1
-if (!isNumber(stat.success))
-stat.success = m.error != null ? 0 : 1
+//if (!isNumber(stat.success))
+stat.success = m.error != null ? 0 : 1//
 if (!isNumber(stat.last))
 stat.last = now
 if (!isNumber(stat.lastSuccess))
