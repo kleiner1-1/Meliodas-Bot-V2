@@ -77,28 +77,3 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
 
 ---
 
-
-
-# *Estadísticas del Proyecto*
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Deylin-Eliac&repo=Kirito-Bot-MD&show_icons=true&theme=radical&hide_border=true" alt="GitHub Stats">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=Deylin-Eliac&theme=radical&hide_border=true" alt="GitHub Streak">
-</p>
-
-<p align="center">
-  <a href="https://github.com/kleiner1-1">
-    <img src="https://img.shields.io/badge/GitHub-Deylin-181717?style=for-the-badge&logo=github">
-  </a>
-  <a href="https://wa.me/50433191934">
-    <img src="https://img.shields.io/badge/WhatsApp-Contactar-25D366?style=for-the-badge&logo=whatsapp">
-  </a>
-  <a href="mailto:deylibaquedano801@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Enviar%20correo-EA4335?style=for-the-badge&logo=gmail">
-  </a>
-</p>
-
----
-
---
-
