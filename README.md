@@ -87,7 +87,7 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
 </p>
 
 <p align="center">
-  <a href="https://github.com/Deylin-Eliac">
+  <a href="https://github.com/kleiner1-1">
     <img src="https://img.shields.io/badge/GitHub-Deylin-181717?style=for-the-badge&logo=github">
   </a>
   <a href="https://wa.me/50433191934">
