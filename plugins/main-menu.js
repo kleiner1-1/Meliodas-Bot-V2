@@ -19,7 +19,7 @@ const menuHeader = `
 
 `;
 
-const sectionDivider = `꧁༒-----------༒꧂`;
+const sectionDivider = `༒━━━━━━━━━━━━━━━━━━༒`;
 
 const menuFooter = `
 ____________________________________
@@ -84,9 +84,9 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
           const plugin = Object.values(global.plugins).find(p => Array.isArray(p.help)? p.help.includes(cmd): p.help === cmd);
           const premium = plugin?.premium? '🐉': '';
           const limited = plugin?.limit? '🌀': '';
-          return `│ 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
+          return `║⇝ 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
-        return `║⇝ 乂 ${title} 乂 \n${entries}\n${sectionDivider}`;
+        return `| 『 ${title} 』 \n${entries}\n${sectionDivider}`;
 }).join('\n\n');
 
     const finalHeader = menuHeader
