@@ -7,15 +7,15 @@ let handler = async (m, { conn }) => {
 ┃ 🌟 *Versión:* ${global.vs || "2.0"}
 ┃
 ┣━━━━━👑 *Propietario* ━━━━━┫
-┃ • *Nombre:* Barboza
+┃ • *Nombre:* Bajo Bots
 ┃ • *Rol:* 𝙿𝚛𝚘𝚙𝚒𝚎𝚝𝚊𝚛𝚒𝚘
-┃ • *Número:* wa.me/584146277368
+┃ • *Número:* wa.me/573162402768
 ┃
 ┃
 ┣━━━🚀 *Colaboradores* ━━━┫
-┃ • *Nombre:* Anuar
+┃ • *Nombre:* 
 ┃   *Rol:* 𝚂𝚘𝚙𝚘𝚛𝚝𝚎
-┃   *Número:* wa.me/584123989549
+┃   *Número:* wa.me/
 ┃
 ┃
 ┃ 
@@ -26,9 +26,9 @@ let handler = async (m, { conn }) => {
 
   try {
     // Verificar variables globales con valores predeterminados
-    const imageUrl = global.imageUrl || "https://files.catbox.moe/ltq7ph.jpg"; // Imagen predeterminada
-    const sourceUrl = global.redes || "https://github.com/Deylinel/TECNO-BOT-OFICIAL"; // URL del proyecto
-    const thumbnailUrl = global.icono || "https://files.catbox.moe/owl2rl.jpg"; // Miniatura
+    const imageUrl = global.imageUrl || "https://qu.ax/UBuRm.jpg"; // Imagen predeterminada
+    const sourceUrl = global.redes || "https://github.com/kleiner1-1/Meliodas-Bot-V2"; // URL del proyecto
+    const thumbnailUrl = global.icono || "https://qu.ax/rEJmN.jpg"; // Miniatura
 
     // Enviar el mensaje con diseño
     await conn.sendMessage(m.chat, {
