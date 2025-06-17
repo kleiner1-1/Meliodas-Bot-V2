@@ -7,7 +7,7 @@ const handler = async (m, { conn }) => {
 ──────── ⚔ ────────  
 
 *Bot Meliodas V2*  
-• ,👥➤ **Grupo de WhatsApp de la comunidad de Bot Barboza Ai**  
+• ,👥➤ **Grupo de WhatsApp de la comunidad de Bot Meliodas V2**  
    Únete para compartir y resolver dudas con otros usuarios. 
   ➤https://whatsapp.com/channel/0029Vb63Kf9KwqSQLOQOtk3N
 
