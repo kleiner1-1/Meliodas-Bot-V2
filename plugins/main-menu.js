@@ -86,7 +86,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
           const limited = plugin?.limit? '🌀': '';
           return `│ 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
-        return `|「 ${title} 」\n${entries}\n${sectionDivider}`;
+        return `║⇝ 乂 ${title} 乂 \n${entries}\n${sectionDivider}`;
 }).join('\n\n');
 
     const finalHeader = menuHeader
@@ -95,7 +95,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
 .replace('%exp', (exp - min) || 0)
 .replace('%max', xp || 100)
 .replace('%limit', limit || 0)
-.replace('%mode', mode || "Público")
+.replace('%mode', mode || "Privado")
 .replace('%uptime', uptime || "0:00:00")
 .replace('%total', totalreg || 0);
 
