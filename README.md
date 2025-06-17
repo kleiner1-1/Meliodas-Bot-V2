@@ -13,7 +13,7 @@
 
 > Un bot de WhatsApp potente y versátil, inspirado en el universo de Sword Art Online. Desarrollado para ofrecer una experiencia ágil, segura y funcional.
 
-*   *Desarrollador:* Deylin Eliac
+*   *Desarrollador:* BAJO BOTS 
 *   *Plataforma:* WhatsApp
 *   *Inspiración:* Sword Art Online
 *   *Características Clave:* Agilidad, Funcionalidad, Seguridad
