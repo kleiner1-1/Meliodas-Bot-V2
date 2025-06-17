@@ -12,14 +12,14 @@ const imagen = "https://qu.ax/rEJmN.jpg";
 
 const menuHeader = `
 | 𝘮𝘦𝘭𝘪𝘰𝘥𝘢𝘴 - 𝘣𝘰𝘵-MD |
-┃ ¡Hola, %name!
-┃ Nivel: %level | XP: %exp/%max
-┃ Límite: %limit | Modo: %mode
-┃ Uptime: %uptime | Usuarios: %total
-╰━━━━━━━━━━━━━━━━━━━━━━━╯
+------|🫴 ¡Hola, %name!
+------|🫴 Nivel: %level | XP: %exp/%max
+------|🫴 Límite: %limit | Modo: %mode
+------|🫴 Uptime: %uptime | Usuarios: %total
+
 `;
 
-const sectionDivider = `╰───────────────╯`;
+const sectionDivider = ``;
 
 const menuFooter = `
 ╭────────────┈
