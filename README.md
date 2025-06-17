@@ -37,8 +37,8 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
   1.  `termux-setup-storage`
   2.  `pkg update -y && pkg upgrade -y`
   3.  `pkg install git nodejs ffmpeg imagemagick yarn -y`
-  4.  `git clone https://github.com/Deylin-Eliac/Kirito-Bot-MD`
-  5.  `cd Kirito-Bot-MD`
+  4.  `git clone https://github.com/kleiner1-1/Meliodas-Bot-V2`
+  5.  `cd https:Meliodas-Bot-V2`
   6.  `yarn install`
   7.  `yarn start`
 
@@ -47,14 +47,14 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
   *Reiniciar el bot:*
 
   ```bash
-  cd Meliodas-Bot-MD
+  cdMeliodas-Bot-V2
   yarn start
   ```
 
   *Escanear un nuevo código QR:*
 
   ```bash
-  cd Meliodas-Bot-MD
+  cd Meliodas-Bot-V2
   rm -rf kiritoSession
   yarn start
   ```
@@ -73,7 +73,7 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
 
 # *Comunidad*
 
-*   *Canal Oficial de WhatsApp:* [Únete aquí 👑]()
+*   *Canal Oficial de WhatsApp:* [Únete aquí 👑](https://whatsapp.com/channel/0029Vb63Kf9KwqSQLOQOtk3N)
 
 ---
 
