@@ -22,12 +22,13 @@ const menuHeader = `
 const sectionDivider = ``;
 
 const menuFooter = `
-╭────────────┈
-│ 💡 Usa cada comando con su prefijo.
-│ ✨ El bot perfecto para animarte.
-│ 🛠 Desarrollado por @Bajo-Bots
-╰────────────┈
-`;
+____________________________________
+
+🫴__  𝐮𝐬𝐚 𝐜𝐚𝐝𝐚 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐜𝐨𝐧 𝐬𝐮 𝐩𝐫𝐞𝐟𝐢𝐣𝐨
+🫴__ ✨ 𝐞𝐥 𝐛𝐨𝐭 𝐩𝐞𝐫𝐟𝐞𝐜𝐭𝐨 𝐩𝐚𝐫𝐚 𝐭𝐮 𝐠𝐫𝐮𝐩𝐨.
+🫴__🛠 𝘥𝘦𝘴𝘢𝘳𝘳𝘰𝘭𝘭𝘢𝘥𝘰 𝘱𝘰𝘳 @𝘉𝘢𝘫𝘰 𝘉𝘰𝘵𝘴
+
+`; 
 
 let handler = async (m, { conn, usedPrefix: _p}) => {
   try {
@@ -81,7 +82,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
 .map(([title, cmds]) => {
         const entries = [...cmds].map(cmd => {
           const plugin = Object.values(global.plugins).find(p => Array.isArray(p.help)? p.help.includes(cmd): p.help === cmd);
-          const premium = plugin?.premium? '💎': '';
+          const premium = plugin?.premium? '🐉': '';
           const limited = plugin?.limit? '🌀': '';
           return `│ 🔹 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
