@@ -8,10 +8,10 @@ const clockString = ms => {
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
 }
 
-const imagen = "https://i.ibb.co/LYZrgRs/The-Miku-Bot-MD.jpg";
+const imagen = "https://qu.ax/rEJmN.jpg";
 
 const menuHeader = `
-╭━━━「 🌸 The-MikuBot-MD 」━━━╮
+| 𝘮𝘦𝘭𝘪𝘰𝘥𝘢𝘴 - 𝘣𝘰𝘵-MD |
 ┃ ¡Hola, %name!
 ┃ Nivel: %level | XP: %exp/%max
 ┃ Límite: %limit | Modo: %mode
@@ -25,7 +25,7 @@ const menuFooter = `
 ╭────────────┈
 │ 💡 Usa cada comando con su prefijo.
 │ ✨ El bot perfecto para animarte.
-│ 🛠 Desarrollado por @Miku-Staff
+│ 🛠 Desarrollado por @Bajo-Bots
 ╰────────────┈
 `;
 
@@ -42,26 +42,26 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
     if (!global.plugins) return conn.reply(m.chat, '❌ Plugins no cargados correctamente.', m);
 
     let categorizedCommands = {
-      "🎭 Anime": new Set(),
+     // "🎭 Anime": new Set(),
       "ℹ️ Info": new Set(),
       "🔎 Search": new Set(),
-      "🎮 Game": new Set(),
+  //   "🎮 Game": new Set(),
       "🤖 SubBots": new Set(),
-      "🌀 RPG": new Set(),
+      //"🌀 RPG": new Set(),
       "📝 Registro": new Set(),
       "🎨 Sticker": new Set(),
       "🖼️ Imagen": new Set(),
-      "🖌️ Logo": new Set(),
-      "⚙️ Configuración": new Set(),
-      "💎 Premium": new Set(),
-      "📥 Descargas": new Set(),
-      "🛠️ Herramientas": new Set(),
-      "🎉 Diversión": new Set(),
-      "🔞 NSFW": new Set(),
+      //"🖌️ Logo": new Set(),
+      //"⚙️ Configuración": new Set(),
+      //"💎 Premium": new Set(),
+      //"📥 Descargas": new Set(),
+      //"🛠️ Herramientas": new Set(),
+      //"🎉 Diversión": new Set(),
+      //"🔞 NSFW": new Set(),
       "📀 Base de Datos": new Set(),
-      "🔊 Audios": new Set(),
-      "🗝️ Avanzado": new Set(),
-      "🔥 Free Fire": new Set(),
+      //"🔊 Audios": new Set(),
+     // "🗝️ Avanzado": new Set(),
+      //"🔥 Free Fire": new Set(),
       "Otros": new Set()
 };
 
