@@ -63,7 +63,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
       //"🔊 Audios": new Set(),
      // "🗝️ Avanzado": new Set(),
       //"🔥 Free Fire": new Set(),
-      "grupos": new Set()
+      //"grupos": new Set()
       //"Otros": new Set() 
 };
 
