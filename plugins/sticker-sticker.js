@@ -16,7 +16,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 
       let img = await q.download?.()
       if (!img) {
-        return conn.reply(m.chat, `${emoji} Por favor, envía una imagen o video para hacer un sticker.`, m, rcanal)
+        return conn.reply(m.chat, `${emoji} Por favor, envía una imagen o video para hacer un sticker.`, )
       }
 
       let out
@@ -47,7 +47,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (stiker) {
       conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
     } else {
-      return conn.reply(m.chat, `🤖 Envié una foto o video para convertirla en sticker siga el canal gracias .`, m, rcanal)
+      return conn.reply(m.chat, `𝙚𝙣𝙫𝙞𝙖 𝙪𝙣𝙖 𝙛𝙤𝙩𝙤 𝙤 𝙫𝙞𝙙𝙚𝙤 𝙥𝙖𝙧𝙖 𝙦𝙪𝙚 𝙨𝙚𝙖 𝙘𝙤𝙣𝙫𝙚𝙧𝙩𝙞𝙙𝙤 𝙚𝙣 𝙨𝙩𝙞𝙠𝙚𝙧 🫴 .`, ) 
     }
   }
 }
