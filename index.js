@@ -33,12 +33,12 @@ let Sesion = 'Sesiones/Principal'
 }
 verify();
 
-say('Barboza - Bot', {
+say('𝘮𝘦𝘭𝘪𝘰𝘥𝘢𝘴 - 𝘣𝘰𝘵', {
 font: 'chrome',
 align: 'center',
 colors: ['white']
 });
-say(`Developed By • Barboza Ai`, {
+say(`Developed By • meliodas bot`, {
 font: 'console',
 align: 'center',
 colors: ['magenta']
