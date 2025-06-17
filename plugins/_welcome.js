@@ -7,7 +7,7 @@ export async function before(m, { conn, participants, groupMetadata }) {
     if (!m.messageStubType || !m.isGroup) return true;
 
     let ppUrl = await conn.profilePictureUrl(m.messageStubParameters[0], "image").catch(
-      () => "https://files.catbox.moe/ltq7ph.jpg"
+      () => "https://qu.ax/QhXFQ.jpg"
     );
     let imgBuffer = await fetch(ppUrl).then(res => res.buffer()).catch(() => null);
 
