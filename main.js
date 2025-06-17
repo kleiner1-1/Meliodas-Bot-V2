@@ -261,7 +261,7 @@ async function connectionUpdate(update) {
     await global.reloadHandler(true).catch(console.error);
     global.timestamp.connect = new Date;
   }
-  //if (global.db.data == null) loadDatabase();
+  if (global.db.data == null) loadDatabase();
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
     console.log(chalk.yellow('🌿 Escanea el código QR.'));
