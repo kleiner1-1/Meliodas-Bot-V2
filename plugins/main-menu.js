@@ -19,7 +19,7 @@ const menuHeader = `
 
 `;
 
-const sectionDivider = ``;
+const sectionDivider = `↘️↘️↘️↘️↘️↘️`;
 
 const menuFooter = `
 ____________________________________
