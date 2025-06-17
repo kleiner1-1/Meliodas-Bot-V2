@@ -28,7 +28,7 @@ let crm4 = " _autoresponder.js info-bot.js";
 let drm1 = "";
 let drm2 = "";
 let rtx = "*Convertirse en sub bot / JadiBot*\n\n* Utilice otro celular para escanear este codigo QR o escanea el codigo mediante una PC para convertirte en Sub Bot*\n\n`1`  Haga clic en los tres puntos en la esquina superior derecha\n\n`2`  Toca dispositivos vinculados\n\n`3`  Escanee este codigo QR para iniciar sesion\n\n *Este codigo QR expira en 45 segundos*";
-let rtx2 = "*Convertirse en sub bot / JadiBot*\n\n*Usa este Codigo para convertirte en un Sub Bot*\n\n`1`  Haga clic en los tres puntos en la esquina superior derecha\n\n`2`  Toca dispositivos vinculados\n\n`3`  Selecciona Vincular con el numero de telefono\n\n`4`  Escriba el Codigo\n\n *Este codigo solo funciona en en el numero que lo solicitaste";
+let rtx2 = "*Convertirse en sub bot / JadiBot*\n\n*Usa este Codigo para convertirte en un Sub Bot*\n\n`1`  Haga clic en los tres puntos en la esquina superior derecha\n\n`2`  Toca dispositivos vinculados\n\n`3`  Selecciona Vincular con el numero de telefono\n\n`4`  Escriba el Codigo\n\n *𝐄𝐬𝐭𝐞 𝐜𝐨𝐝𝐢𝐠𝐨 𝐬𝐨𝐥𝐨 𝐟𝐮𝐧𝐜𝐢𝐨𝐧𝐚 𝐞𝐧 𝐞𝐧 𝐞𝐥 𝐧𝐮𝐦𝐞𝐫𝐨 𝐪𝐮𝐞 𝐥𝐨 𝐬𝐨𝐥𝐢𝐜𝐢𝐭𝐚𝐬𝐭𝐞  ";
 
 if (global.conns instanceof Array) {
   console.log();
