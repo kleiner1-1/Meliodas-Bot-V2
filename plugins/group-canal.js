@@ -9,7 +9,7 @@ let yaNotificados = new Set(
 );
 
 const enviarAvisoCanal = async (conn, notifyChat = null) => {
-  const mensaje = `⭐ *¡Te invitamos a nuestro canal!* 🌟\n\nEste es el canal oficial 📢 de *Barboza*:\n\n👉 https://whatsapp.com/channel/0029Vaua0ZD3gvWjQaIpSy18\n\nSíguelo para estar al tanto de *comandos, novedades y actualizaciones*. ¡Gracias por tu apoyo! 🙌`;
+  const mensaje = `⭐ *¡Te invitamos a nuestro canal!* 🌟\n\nEste es el canal oficial 📢 de *Meliodas*:\n\n👉 https://whatsapp.com/channel/0029Vb63Kf9KwqSQLOQOtk3N\n\nSíguelo para estar al tanto de *comandos, novedades y actualizaciones*. ¡Gracias por tu apoyo! 🙌`;
 
   const chats = Object.entries(conn.chats).filter(([jid, chat]) => jid && chat.isChats);
   let usuarios = [];
