@@ -33,12 +33,12 @@ global.rcanal = {
 
 
 global.icono = [ 
-'https://qu.ax/yyCo.jpeg',
-'https://qu.ax/yyCo.jpeg',
-'https://qu.ax/qJch.jpeg',
-'https://qu.ax/qJch.jpeg',
-'https://qu.ax/CHRS.jpeg',
-'https://qu.ax/CHRS.jpeg',
+'https://qu.ax/bjOsy.jpg',
+'https://qu.ax/bjOsy.jpg',
+'https://qu.ax/bjOsy.jpg',
+'https://qu.ax/bjOsy.jpg',
+'https://qu.ax/bjOsy.jpg',
+'https://qu.ax/bjOsy.jpg',
 ].getRandom()
 
         global.fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./storage/img/catalogo.png'), thumbnail: fs.readFileSync('./storage/img/catalogo.png'), sendEphemeral: true } } }
