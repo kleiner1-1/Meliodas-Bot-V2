@@ -1,26 +1,26 @@
 const handler = async (m, { conn }) => {
-  let gifUrl = "https://files.catbox.moe/ltq7ph.jpg";
+  let gifUrl = "https://qu.ax/QhXFQ.jpg";
 
   let text = `
  ──────── ⚔ ────────  
      *COMUNIDAD*  
 ──────── ⚔ ────────  
 
-*Bot barboza*  
+*Bot Meliodas V2*  
 • ,👥➤ **Grupo de WhatsApp de la comunidad de Bot Barboza Ai**  
    Únete para compartir y resolver dudas con otros usuarios. 
-  ➤https://whatsapp.com/channel/0029Vaua0ZD3gvWjQaIpSy18
+  ➤https://whatsapp.com/channel/0029Vb63Kf9KwqSQLOQOtk3N
 
-• 📢 ➤ *Canal de Bot Barboza Ai*  
+• 📢 ➤ *Canal de Bot Meliodas V2*  
    Recibe actualizaciones, noticias y lanzamientos del bot.  
-https://whatsapp.com/channel/0029Vaua0ZD3gvWjQaIpSy18
+https://whatsapp.com/channel/0029Vb63Kf9KwqSQLOQOtk3N
 • 💬 ➤ *Grupo de WhatsApp activo*  
    Chatea con usuarios en tiempo real y sé parte de la conversación y usa al bot que esta de uso libre.  
-➤https://chat.whatsapp.com/E1kx7olE0RpA18BdALdaWV
+➤
 
 ──────── ⚔ ────────  
 🔍 *¿Sabías que...?* 
-- El bot Barboza Ai es actualizado regularmente para mejorar su desempeño.  
+- El bot Meliodas V2 es actualizado regularmente para mejorar su desempeño.  
 - Puedes sugerir mejoras o reportar errores directamente en los grupos.  
 - Nuestra comunidad sigue creciendo y cuenta con soporte activo.  
 -
