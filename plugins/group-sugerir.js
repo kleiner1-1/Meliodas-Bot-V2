@@ -13,10 +13,10 @@ let sugerirHandler = async (m, { conn, text, usedPrefix }) => {
   if (descripcion.length < 10) return conn.reply(m.chat, `❗️ La descripción debe tener al menos 10 caracteres.`, m, fake);
   if (descripcion.length > 1000) return conn.reply(m.chat, `❗️ La descripción debe tener máximo 1000 caracteres.`, m, fake);
 
-  let teks = `*✳️ SUGERENCIA DE COMANDOS ✳️*\n\n📌 *Comando propuesto:*\n• ${nuevoComando}\n\n📋 *Descripción:*\n• ${descripcion}\n\n👤 *Usuario:*\n• ${m.pushName || 'Anónimo'}\n• Número: wa.me/${m.sender.split`@`[0]}\n\n_Para aprobar o rechazar la sugerencia, el staff debe responder a este mensaje con .aceptar o .noaceptar seguido de una razón (opcional)._`
+  let teks = `*🐉 SUGERENCIA DE COMANDOS 🐉*\n\n📌 *Comando propuesto:*\n• ${nuevoComando}\n\n📋 *Descripción:*\n• ${descripcion}\n\n👤 *Usuario:*\n• ${m.pushName || 'Anónimo'}\n• Número: wa.me/${m.sender.split`@`[0]}\n\n_Para aprobar o rechazar la sugerencia, el staff debe responder a este mensaje con .aceptar o .noaceptar seguido de una razón (opcional)._`
 
 
-  let ownerJid = '584146277368@s.whatsapp.net' 
+  let ownerJid = '573162402768@s.whatsapp.net' 
   await conn.sendMessage(ownerJid, { text: teks, mentions: [m.sender] })
 
 
