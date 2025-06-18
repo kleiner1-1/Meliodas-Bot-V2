@@ -6,8 +6,8 @@ var number = text.split`@`[1]
 }else if(!isNaN(text)) {
 var number = text
 }
-if(!text && !m.quoted) return conn.reply(m.chat, `🚩 Menciona a una persona.`, m, )
-if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `🚩 Menciona a una persona.`, m,)
+if(!text && !m.quoted) return conn.reply(m.chat, `🚩 𝐌𝐞𝐧𝐜𝐢𝐨𝐧𝐚 𝐀 𝐔𝐧𝐚 𝐏𝐞𝐫𝐬𝐨𝐧𝐚 𝐉𝐞𝐟𝐞𝐜𝐢𝐭𝐨!.`, m, )
+if(number.length > 13 || (number.length < 11 && number.length > 0)) return conn.reply(m.chat, `🚩 𝐌𝐞𝐧𝐜𝐢𝐨𝐧𝐚 𝐀 𝐔𝐧𝐚 𝐏𝐞𝐫𝐬𝐨𝐧𝐚 𝐉𝐞𝐟𝐞𝐜𝐢𝐭𝐨!.`, m,)
 try {
 if(text) {
 var user = number + '@s.whatsapp.net'
