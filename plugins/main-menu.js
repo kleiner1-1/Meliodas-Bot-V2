@@ -11,7 +11,7 @@ const clockString = ms => {
 const imagen = "https://qu.ax/rEJmN.jpg";
 
 const menuHeader = `
-| 🎰𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐁𝐎𝐓-𝐌𝐃🎰 |
+| Meliodas - Bot MD |
 ------|🫴 ¡hola, %name!
 ------|🫴 nivel: %level | XP: %exp/%max
 ------|🫴 limite: %limit | modo: %mode
