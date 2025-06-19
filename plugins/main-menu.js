@@ -8,7 +8,7 @@ const clockString = ms => {
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
 }
 
-const imagen = "https://i.ibb.co/LYZrgRs/The-Miku-Bot-MD.jpg";
+const imagen = "https://qu.ax/bjOsy.jpg";
 
 const menuHeader = `
 
@@ -23,11 +23,11 @@ const menuHeader = `
 const sectionDivider = ``;
 
 const menuFooter = `
-╭────────────┈
-│ 💡 Usa cada comando con su prefijo.
-│ ✨ El bot perfecto para animarte.
-│ 🛠 Desarrollado por @Bajo-Bots
-╰────────────┈
+╭
+│ 💡 𝐮𝐬𝐚 𝐜𝐚𝐝𝐚 𝐜𝐨𝐦𝐚𝐧𝐝𝐨 𝐜𝐨𝐧 𝐬𝐮 𝐩𝐫𝐞𝐟𝐢𝐣𝐨.
+│ ✨ 𝐞𝐥 𝐛𝐨𝐭 𝐩𝐞𝐫𝐟𝐞𝐜𝐭𝐨 𝐩𝐚𝐫𝐚 𝐭𝐮 𝐠𝐫𝐮𝐩𝐨.
+│ 🛠 𝐝𝐞𝐬𝐚𝐫𝐫𝐨𝐥𝐥𝐚𝐝𝐨 𝐩𝐨𝐫 @𝐁𝐚𝐣𝐨-𝐁𝐨𝐭𝐬
+╰
 `;
 
 let handler = async (m, { conn, usedPrefix: _p}) => {
@@ -84,9 +84,9 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
           const plugin = Object.values(global.plugins).find(p => Array.isArray(p.help)? p.help.includes(cmd): p.help === cmd);
           const premium = plugin?.premium? '💎': '';
           const limited = plugin?.limit? '🌀': '';
-          return `│ 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
+          return `┊† 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
-        return `╭─「 ${title} 」\n${entries}\n${sectionDivider}`;
+        return `࿐「 ${title} 」\n${entries}\n${sectionDivider}`;
 }).join('\n\n');
 
     const finalHeader = menuHeader
