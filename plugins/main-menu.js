@@ -12,7 +12,7 @@ const imagen = "https://qu.ax/bjOsy.jpg";
 
 const menuHeader = `
 
- 🐉 Meliodas-Bot 🐉
+  🐉𝐌𝐞𝐥𝐢𝐨𝐝𝐚𝐬-𝐁𝐨𝐭🐉 
 ┃ ¡Hola, %name!
 ┃ Nivel: %level | XP: %exp/%max
 ┃ Límite: %limit | Modo: %mode
