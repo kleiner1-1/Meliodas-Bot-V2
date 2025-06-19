@@ -11,6 +11,9 @@ async function handler(m, { conn }) {
     let imagen = 'https://qu.ax/VGCPX.jpg'; // Reemplaza con la URL de la imagen que deseas mostrar
 
     // Enviar imagen junto con el número del dueño y sus detalles
+     
+    |🫴𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎́𝐍 𝐃𝐄𝐋 𝐂𝐑𝐄𝐀𝐃𝐎𝐑 🫴|
+    
     await conn.sendMessage(m.chat, { 
         image: { url: imagen },
         caption: `👤 *Dueño del bot*\n📌 *Nombre:* ${name}\n📞 *Número:* wa.me/${numcreador}\n📝 *Descripción:* ${about}\n🏢 *Empresa:* ${empresa}\n📧 *Email:* kleinergalindo4@gmail.com\n🌐 *Instagram:* `,
