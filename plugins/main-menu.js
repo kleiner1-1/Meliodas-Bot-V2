@@ -12,10 +12,10 @@ const imagen = "https://qu.ax/rEJmN.jpg";
 
 const menuHeader = `
 | 🎰𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐁𝐎𝐓-𝐌𝐃🎰 |
-------|🫴 ¡𝐇𝐎𝐋𝐀, %name!
-------|🫴 𝐍𝐈𝐕𝐄𝐋: %level | XP: %exp/%max
-------|🫴 𝐋𝐈𝐌𝐈𝐓𝐄: %limit | MODO: %mode
-------|🫴 𝐔𝐏𝐓𝐈𝐌𝐄: %uptime | USUARIOS: %total
+------|🫴 ¡HOLA, %name!
+------|🫴 NIVEL: %level | XP: %exp/%max
+------|🫴 LIMITE: %limit | MODO: %mode
+------|🫴 UPTIME: %uptime | USUARIOS: %total
 
 `;
 
