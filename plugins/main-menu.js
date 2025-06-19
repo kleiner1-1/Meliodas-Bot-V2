@@ -14,8 +14,8 @@ const menuHeader = `
 | 🎰𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐁𝐎𝐓-𝐌𝐃🎰 |
 ------|🫴 ¡HOLA, %name!
 ------|🫴 NIVEL: %level | XP: %exp/%max
-------|🫴 LIMITE: %limit | MODO: %mode
-------|🫴 UPTIME: %uptime | USUARIOS: %total
+------|🫴 LIMITE: %limit | modo: %mode
+------|🫴 UPTIME: %uptime | usuarios: %total
 
 `;
 
@@ -44,26 +44,26 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
 
     let categorizedCommands = {
      // "🎭 Anime": new Set(),
-      "ℹ️ INFO": new Set(),
-      "🔎 SEARCH": new Set(),
-     "🎮 GAME": new Set(),
-      "🤖 SUBBOTS": new Set(),
+      "ℹ️ info": new Set(),
+      "🔎 search": new Set(),
+     "🎮 game": new Set(),
+      "🤖 subbots": new Set(),
       //"🌀 RPG": new Set(),
-      "📝 REGISTRO": new Set(),
-      "🎨 STICKER": new Set(),
-      "🖼️ IMAGEN": new Set(),
-      "🖌️ LOGO": new Set(),
-      "⚙️ CONFIGURACION": new Set(),
+      "📝 registro": new Set(),
+      "🎨 sticker": new Set(),
+      "🖼️ imagen": new Set(),
+      "🖌️ logo": new Set(),
+      "⚙️ configuracion": new Set(),
       //"💎 Premium": new Set(),
-      "📥 DESCARGAS": new Set(),
-      " 🛠️ HERRAMIENTAS ": new Set(),
-      //"🎉 Diversión": new Set(),
+      "📥 descargas": new Set(),
+      " 🛠️ herramientas": new Set(),
+      //"🎉 Diversión":  new Set(),
       //"🔞 NSFW": new Set(),
-      "📀 BASE DE DATOS": new Set(),
+      "📀 base de datos": new Set(),
       //"🔊 Audios": new Set(),
      // "🗝️ Avanzado": new Set(),
-      "🔥 FREE FIRE": new Set(),
-      "OTROS": new Set() 
+      "🔥 free fire": new Set(),
+      "otros": new Set() 
 };
 
     for (const plugin of Object.values(global.plugins)) {
