@@ -12,7 +12,13 @@ async function handler(m, { conn }) {
 
     // Enviar imagen junto con el número del dueño y sus detalles
      
-    |🫴𝐈𝐍𝐅𝐎𝐑𝐌𝐀𝐂𝐈𝐎́𝐍 𝐃𝐄𝐋 𝐂𝐑𝐄𝐀𝐃𝐎𝐑 🫴|
+    const caption = `
+╔═══🌸 *INFORMACIÓN DE LA CREADORA* 🌸═══╗
+👩‍💻 *Nombre:* ${name}
+📱 *Número:* wa.me/${numcreador}
+📝 *Descripción:* ${about}
+🏢 *Empresa:* ${empresa}
+╚════════════════════════════════╝`.trim();
     
     await conn.sendMessage(m.chat, { 
         image: { url: imagen },
