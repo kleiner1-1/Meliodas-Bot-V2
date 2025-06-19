@@ -86,7 +86,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
           const limited = plugin?.limit? '🌀': '';
           return `┊† 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
-        return `࿐「 ${title} 」\n${entries}\n${sectionDivider}`;
+        return `⏤͟͟͞͞★「 ${title} 」\n${entries}\n${sectionDivider}`;
 }).join('\n\n');
 
     const finalHeader = menuHeader
