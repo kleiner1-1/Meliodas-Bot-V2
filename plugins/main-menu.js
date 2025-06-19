@@ -11,11 +11,11 @@ const clockString = ms => {
 const imagen = "https://qu.ax/rEJmN.jpg";
 
 const menuHeader = `
-| 𝘮𝘦𝘭𝘪𝘰𝘥𝘢𝘴 - 𝘣𝘰𝘵-MD |
-------|🫴 ¡Hola, %name!
-------|🫴 Nivel: %level | XP: %exp/%max
-------|🫴 Límite: %limit | Modo: %mode
-------|🫴 Uptime: %uptime | Usuarios: %total
+| 🎰𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐁𝐎𝐓-𝐌𝐃🎰 |
+------|🫴 ¡𝐇𝐎𝐋𝐀  %name!
+------|🫴 𝐍𝐈𝐕𝐄𝐋: %level | XP: %exp/%max
+------|🫴 𝐋𝐈𝐌𝐈𝐓𝐄: %limit | 𝐌𝐎𝐃𝐎: %mode
+------|🫴 𝐔𝐏𝐓𝐈𝐌𝐄: %uptime | 𝐔𝐒𝐔𝐀𝐑𝐈𝐎𝐒: %total
 
 `;
 
@@ -44,26 +44,26 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
 
     let categorizedCommands = {
      // "🎭 Anime": new Set(),
-      "ℹ️ Info": new Set(),
-      "🔎 Search": new Set(),
-     "🎮 Game": new Set(),
-      "🤖 SubBots": new Set(),
+      "ℹ️ 𝐈𝐍𝐅𝐎": new Set(),
+      "🔎 𝐒𝐄𝐀𝐑𝐂𝐇": new Set(),
+     "🎮 𝐆𝐀𝐌𝐄": new Set(),
+      "🤖 𝐒𝐔𝐁𝐁𝐎𝐓𝐒": new Set(),
       //"🌀 RPG": new Set(),
-      "📝 Registro": new Set(),
-      "🎨 Sticker": new Set(),
-      "🖼️ Imagen": new Set(),
-      "🖌️ Logo": new Set(),
-      "⚙️ Configuración": new Set(),
+      "📝 𝐑𝐄𝐆𝐈𝐒𝐓𝐑𝐎": new Set(),
+      "🎨 𝐒𝐓𝐈𝐂𝐊𝐄𝐑": new Set(),
+      "🖼️ 𝐈𝐌𝐀𝐆𝐄𝐍": new Set(),
+      "🖌️ 𝐋𝐎𝐆𝐎": new Set(),
+      "⚙️ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍": new Set(),
       //"💎 Premium": new Set(),
-      "📥 Descargas": new Set(),
-      " 🛠️ Herramientas": new Set(),
+      "📥 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒": new Set(),
+      " 🛠️ 𝐇𝐄𝐑𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀𝐒": new Set(),
       //"🎉 Diversión": new Set(),
       //"🔞 NSFW": new Set(),
-      "📀 Base de Datos": new Set(),
+      "📀 𝐁𝐀𝐒𝐄 𝐃𝐄 𝐃𝐀𝐓𝐎𝐒": new Set(),
       //"🔊 Audios": new Set(),
      // "🗝️ Avanzado": new Set(),
-      "🔥 Free Fire": new Set(),
-      "Otros": new Set() 
+      "🔥 𝐅𝐑𝐄𝐄 𝐅𝐈𝐑𝐄": new Set(),
+      "𝐎𝐓𝐑𝐎𝐒": new Set() 
 };
 
     for (const plugin of Object.values(global.plugins)) {
