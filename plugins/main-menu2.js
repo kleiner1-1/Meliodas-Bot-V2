@@ -1,29 +1,29 @@
 let handler = async (m, { isPrems, conn }) => {
-let img = 'https://files.catbox.moe/ltq7ph.jpg' 
+let img = 'https://qu.ax/UBuRm.jpg' 
 let texto = `*☁️ _M E N U - A U D I O S_ ☁️*
 
-° _Tunometecabrasaramambiche_.
-° _Me Anda Buscando Anonymous_.
-° _Se Estan Riendiendo De Mi_.
-° _Esto Va Ser Epico Papus_.
-° _En Caso De Una Investigación_.
-° _Elmo Sabe Donde Vives_.
-° _Diagnosticado Con Gay_.
-° _Esto Va Para Ti_.
-° _Feliz Cumpleaños_.
-° _Maldito Teni_.
-° _Conoces a Miguel_.
-° _Usted es Feo_.
-° _Como Estan_.
-° _Verdad Que Te Engañe_.
-° _Hermoso Negro_.
-° _Vivan Los Novios_.
-° _Usted Esta Detenido_.
-° _Su Nivel De Pendejo_.
-° _Quien Es Tu Botsito_.
-° _No Digas Eso Papus_.
-° _No Me Hagas Usar Esto_.
-° _No Me Hables_.
+🫴 _Tunometecabrasaramambiche_.
+🫴 _Me Anda Buscando Anonymous_.
+🫴 _Se Estan Riendiendo De Mi_.
+🫴 _Esto Va Ser Epico Papus_.
+🫴 _En Caso De Una Investigación_.
+🫴 _Elmo Sabe Donde Vives_.
+🫴 _Diagnosticado Con Gay_.
+🫴 _Esto Va Para Ti_.
+🫴_Feliz Cumpleaños_.
+🫴 _Maldito Teni_.
+🫴 _Conoces a Miguel_.
+🫴 _Usted es Feo_.
+🫴_Como Estan_.
+🫴_Verdad Que Te Engañe_.
+🫴_Hermoso Negro_.
+🫴 _Vivan Los Novios_.
+🫴_Usted Esta Detenido_.
+🫴_Su Nivel De Pendejo_.
+🫴 _Quien Es Tu Botsito_.
+🫴_No Digas Eso Papus_.
+🫴_No Me Hagas Usar Esto_.
+🫴_No Me Hables_.
 ° _No Chupala_.
 ° _Nadie Te Pregunto_.
 ° _Mierda De Bot_.
