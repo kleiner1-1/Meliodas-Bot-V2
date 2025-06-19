@@ -11,21 +11,22 @@ const clockString = ms => {
 const imagen = "https://i.ibb.co/LYZrgRs/The-Miku-Bot-MD.jpg";
 
 const menuHeader = `
-╭━━━「 🌸 The-MikuBot-MD 」━━━╮
+
+ 🐉 Meliodas-Bot 🐉
 ┃ ¡Hola, %name!
 ┃ Nivel: %level | XP: %exp/%max
 ┃ Límite: %limit | Modo: %mode
 ┃ Uptime: %uptime | Usuarios: %total
-╰━━━━━━━━━━━━━━━━━━━━━━━╯
+
 `;
 
-const sectionDivider = `╰───────────────╯`;
+const sectionDivider = ``;
 
 const menuFooter = `
 ╭────────────┈
 │ 💡 Usa cada comando con su prefijo.
 │ ✨ El bot perfecto para animarte.
-│ 🛠 Desarrollado por @Miku-Staff
+│ 🛠 Desarrollado por @Bajo-Bots
 ╰────────────┈
 `;
 
@@ -42,25 +43,25 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
     if (!global.plugins) return conn.reply(m.chat, '❌ Plugins no cargados correctamente.', m);
 
     let categorizedCommands = {
-      "🎭 Anime": new Set(),
+     // "🎭 Anime": new Set(),
       "ℹ️ Info": new Set(),
       "🔎 Search": new Set(),
       "🎮 Game": new Set(),
       "🤖 SubBots": new Set(),
-      "🌀 RPG": new Set(),
+    //  "🌀 RPG": new Set(),
       "📝 Registro": new Set(),
       "🎨 Sticker": new Set(),
       "🖼️ Imagen": new Set(),
       "🖌️ Logo": new Set(),
       "⚙️ Configuración": new Set(),
-      "💎 Premium": new Set(),
+  //    "💎 Premium": new Set(),
       "📥 Descargas": new Set(),
       "🛠️ Herramientas": new Set(),
-      "🎉 Diversión": new Set(),
-      "🔞 NSFW": new Set(),
+   //   "🎉 Diversión": new Set(),
+    //  "🔞 NSFW": new Set(),
       "📀 Base de Datos": new Set(),
-      "🔊 Audios": new Set(),
-      "🗝️ Avanzado": new Set(),
+ //     "🔊 Audios": new Set(),
+  //    "🗝️ Avanzado": new Set(),
       "🔥 Free Fire": new Set(),
       "Otros": new Set()
 };
@@ -83,7 +84,7 @@ let handler = async (m, { conn, usedPrefix: _p}) => {
           const plugin = Object.values(global.plugins).find(p => Array.isArray(p.help)? p.help.includes(cmd): p.help === cmd);
           const premium = plugin?.premium? '💎': '';
           const limited = plugin?.limit? '🌀': '';
-          return `│ 🔹 _${_p}${cmd}_ ${premium}${limited}`.trim();
+          return `│ 🐉 _${_p}${cmd}_ ${premium}${limited}`.trim();
 }).join('\n');
         return `╭─「 ${title} 」\n${entries}\n${sectionDivider}`;
 }).join('\n\n');
