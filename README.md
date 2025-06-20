@@ -4,7 +4,7 @@
 ---
 
 <p align="center">
-  <img src="https://qu.ax/iZYvt.png" alt="Meliodas Bot MD Logo">
+  <img src="https://qu.ax/pjKoG.jpg" alt="Meliodas Bot MD Logo">
 </p>
 
 ---
