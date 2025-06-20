@@ -77,3 +77,7 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
 
 ---
 
+
+
+ ### `—◉ 💯 DUDAS SOBRE EL BOT?,CONTACTA AL CREADOR💯`
+<a href="http://wa.me/573162402768" target="blank"><img src="https://img.shields.io/badge/Bajobots_CREADOR-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
