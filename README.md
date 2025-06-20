@@ -29,18 +29,57 @@ Este proyecto se distribuye bajo la [Licencia Pública General GNU Affero v3](./
 <a
 href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="https://qu.ax/finc.jpg" height="125px"></a>
 
-# *Instalación en Termux*
 
-<details>
-  <summary><b>*Guía de Instalación Paso a Paso*</b></summary>
 
-  1.  `termux-setup-storage`
-  2.  `pkg update -y && pkg upgrade -y`
-  3.  `pkg install git nodejs ffmpeg imagemagick yarn -y`
-  4.  `git clone https://github.com/kleiner1-1/Meliodas-Bot-V2`
-  5.  `cd https:Meliodas-Bot-V2`
-  6.  `yarn install`
-  7.  `yarn start`
+### `—◉ 📍𝗔𝗰𝘁𝗶𝘃𝗮𝗿 𝗲𝗻 𝘁𝗲𝗿𝗺𝘂𝘅📍` 
+- ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+```bash
+cd && termux-setup-storage
+```
+
+```bash
+apt-get update -y && apt-get upgrade -y
+```
+
+```bash
+pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn 
+```
+
+```bash
+git clone  https://github.com/kleiner1-1/Bot-mob-pysho-v1.git
+```
+
+```bash
+yarn install
+```
+
+```bash
+npm install
+```
+
+```bash
+npm update
+```
+
+```bash
+npm start
+```
+
+### `—◉ ✔️ACTIVAR EN CASO DE DETENERSE EN TERMUX✔️`
+```bash
+ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+> cd 
+> cd Black-termux
+> npm start
+```
+
+### `—◉ ❗OBTENER OTRO CODIGO QR EN TERMUX❗`
+- DETENER EL BOT DANDO CLICK EN EL SIMBOLO CTROL EN TERMUX MAS LA LETRA Z EN SU TECLADO MOVIL HASTA QUE SALGA ALGO EN VERDE SIMILAR A Black-termux $  
+```bash
+ESCRIBE LOS SIGUIENTES COMANDOS UNO POR UNO:
+> cd 
+> rm -rf Blacksession
+> npm start
 
   *Nota:* Los errores en rojo durante el escaneo del código QR son normales.
 
@@ -48,14 +87,6 @@ href="https://www.mediafire.com/file/3hsvi3xkpq3a64o/termux_118.a"><img src="htt
 
   ```bash
   cdMeliodas-Bot-V2
-  yarn start
-  ```
-
-  *Escanear un nuevo código QR:*
-
-  ```bash
-  cd Meliodas-Bot-V2
-  rm -rf kiritoSession
   yarn start
   ```
 
