@@ -46,7 +46,7 @@ pkg install -y git nodejs ffmpeg imagemagick && pkg install yarn
 ```
 
 ```bash
-git clone  https://github.com/kleiner1-1/Bot-mob-pysho-v1.git
+git clone  https://github.com/kleiner1-1/Meliodas-Bot-V2
 ```
 
 ```bash
