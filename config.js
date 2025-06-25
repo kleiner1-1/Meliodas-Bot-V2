@@ -10,7 +10,7 @@ import axios from 'axios'
 
   global.owner = [
   [ '573162402768', 'BAJO BOTS', true ],
-  [ '', 'Goku', true ],
+  [ '50557865603', 'Goku', true ],
   ]
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
