@@ -27,7 +27,7 @@ const handler = async (m, { conn, text, args }) => {
 
 ⟬ Tipo de contenido: ${mode} ⟭  
 
-> ⌞ © Power by Bajo;
+> ⌞ © Power by Bajo`.trim();
 
 
     if (type === 'video') {
