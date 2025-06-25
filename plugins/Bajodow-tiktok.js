@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 
 const handler = async (m, { conn, text, args, command }) => {
   try {
-    if (!args[0]) return conn.reply(m.chat, `🥀 Ingresa un enlace válido de TikTok.`, m);
+    if (!args[0]) return conn.reply(m.chat, `↘️ 𝙞𝙣𝙜𝙧𝙚𝙨𝙖 𝙪𝙣 𝙡𝙞𝙣𝙠 𝙫𝙖𝙡𝙞𝙙𝙤 𝙙𝙚 𝙩𝙞𝙠 𝙩𝙤𝙠.`, m);
     if (!/(?:https?:\/\/)?(?:www\.|vm\.|vt\.|t)?\.?tiktok\.com\/[^\s&]+/i.test(text)) return conn.reply(m.chat, `❎ Enlace de TikTok inválido.`, m);
 
     m.react('🕒');
