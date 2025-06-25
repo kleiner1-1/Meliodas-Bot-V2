@@ -4,7 +4,7 @@ import fetch from "node-fetch";
 
 const handler = async (m, { conn, text, args }) => {
   try {
-    if (!args[0]) return conn.reply(m.chat, `↘️ 𝙞𝙣𝙜𝙧𝙚𝙨𝙖 𝙪𝙣 𝙡𝙞𝙣𝙠 𝙫𝙖𝙡𝙞𝙙𝙤 𝙙𝙚 𝙩𝙞𝙠 𝙩𝙤𝙠.`, m);
+    if (!args[0]) return conn.reply(m.chat, `🥀 Ingresa un enlace válido de TikTok.`, m);
     if (!/(?:https?:\/\/)?(?:www\.|vm\.|vt\.|t)?\.?tiktok\.com\/[^\s&]+/i.test(text)) return conn.reply(m.chat, `❎ Enlace de TikTok inválido.`, m);
 
     m.react('🕒');
@@ -18,14 +18,13 @@ const handler = async (m, { conn, text, args }) => {
     let type = json.type;
 
     let caption = `
-*⟦ 💥 𝙈𝙚𝙡𝙞𝙤𝙙𝙖𝙨𝘽𝙤𝙩 ⟧ — ⌜{📃nombre del comando📃}⌟*
+*⟦ 💥 𝙈𝙚𝙡𝙞𝙤𝙙𝙖𝙨𝘽𝙤𝙩 ⟧ — ⌜ ${command}⌟*
 
-⤷ 📃 *Título:* [Nombre del contenido]  
-⤷ ⌛ *Duración:* 4:07  
-⤷ 📅 *Publicado:* Hace 6 años  
-⤷ 🔗 *Enlace:* [URL]
+⤷ 📃 *Título:* ${title}  
+⤷ ⌛ *Duración:* ${duration} 
+⤷ 🔗 *Autor:* ${author}
 
-⟬ Tipo de contenido: ${mode} ⟭  
+⟬ Tipo: download ⟭  
 
 > ⌞ © Power by Bajo`.trim();
 
