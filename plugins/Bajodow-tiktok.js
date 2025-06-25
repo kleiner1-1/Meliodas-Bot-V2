@@ -18,11 +18,17 @@ const handler = async (m, { conn, text, args }) => {
     let type = json.type;
 
     let caption = `
-乂 \`TikTok Downloader\`
+*⟦ 💥 𝙈𝙚𝙡𝙞𝙤𝙙𝙖𝙨𝘽𝙤𝙩 ⟧ — ⌜{📃nombre del comando📃}⌟*
 
-◦ 👤 *Autor:* ${author}
-◦ 📌 *Título:* ${title}
-◦ ⏱️ *Duración:* ${duration}s`;
+⤷ 📃 *Título:* [Nombre del contenido]  
+⤷ ⌛ *Duración:* 4:07  
+⤷ 📅 *Publicado:* Hace 6 años  
+⤷ 🔗 *Enlace:* [URL]
+
+⟬ Tipo de contenido: ${mode} ⟭  
+
+> ⌞ © Power by Bajo;
+
 
     if (type === 'video') {
       await conn.sendFile(m.chat, dl.url, 'tiktok.mp4', caption, m);
