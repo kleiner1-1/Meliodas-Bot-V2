@@ -3,7 +3,7 @@ let handler = async (m, { conn, isRowner }) => {
     let _muptime;
     let totalreg = Object.keys(global.db.data.users).length;
     let totalchats = Object.keys(global.db.data.chats).length;
-    let pp = 'https://qu.ax/Mvhfa.jpg'; // Usamos la URL de la imagen aquí
+    let pp = 'https://qu.ax/pjKoG.jpg'; // Usamos la URL de la imagen aquí
 
     if (process.send) {
         process.send('uptime');
@@ -17,8 +17,8 @@ let handler = async (m, { conn, isRowner }) => {
     const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats);
     const groupsIn = chats.filter(([id]) => id.endsWith('@g.us'));
     const used = process.memoryUsage();
-    let Sisked = `╭─⬣「 *Estado De Bot Barboza* 」⬣\n`;
-    Sisked += `│ 👤 *Creador ∙* Barboza\n`;
+    let Sisked = `╭─⬣「 *Estado De Bot Meliodas* 」⬣\n`;
+    Sisked += `│ 👤 *Creador ∙* BajoBots\n`;
     Sisked += `│ 💎 *Grupos Unidos ∙* ${groupsIn.length}\n`;
     Sisked += `│ 💨 *Chats Privados ∙* ${chats.length - groupsIn.length}\n`;
     Sisked += `│ 🪙 *Total De Chats ∙* ${chats.length}\n`;
