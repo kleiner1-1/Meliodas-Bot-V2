@@ -1,5 +1,6 @@
 let usersTempRegister = {};
 
+
 let handler = async (m, { conn, text, command}) => {
   const id = m.sender;
   const user = global.db.data.users[id];
@@ -39,7 +40,7 @@ let handler = async (m, { conn, text, command}) => {
       country: stage.country,
       registered: true,
       regTime: Date.now(),
-      id: require('crypto').createHash('sha256').update(id).digest('hex')
+      id: (await import("crypto")).createHash('sha256').update(id).digest('hex')
 };
 
     delete usersTempRegister[id];
