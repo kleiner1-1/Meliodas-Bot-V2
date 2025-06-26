@@ -1,51 +1,65 @@
+let usersTempRegister = {};
 
-import { createHash} from 'crypto';
+let handler = async (m, { conn, text, command}) => {
+  const id = m.sender;
+  const user = global.db.data.users[id];
 
-let handler = async (m, { conn, text, usedPrefix, command}) => {
-    let regFormat = /^([^\s]+)\.(\d+)\.(\w+)$/i;
-    let userDB = global.db.data.users[m.sender];
-    let imageUrl = 'https://qu.ax/rEJmN.jpg';
-
-    if (userDB?.registered) {
-        return m.reply(`✅ Ya estás registrado.\nSi deseas eliminar tu registro, usa: *${usedPrefix}unreg*`);
+  if (user?.registered) {
+    return m.reply('✅ Ya estás registrado.\nPara eliminar tu registro, usa: *.unregister*');
 }
 
-    if (!regFormat.test(text)) {
-        return m.reply(`🛑 𝙛𝙤𝙧𝙢𝙖𝙩𝙤 𝙞𝙣𝙘𝙤𝙧𝙧𝙚𝙘𝙩𝙤.\nUsa: *${usedPrefix + command} Nombre.Edad.País*\nEjemplo: *${usedPrefix + command} Meliodas.18.Colombia*`);
+  if (!usersTempRegister[id]) {
+    usersTempRegister[id] = { step: 1};
+    return m.reply('📝 ¿Cuál es tu *nombre*? (Máximo 30 caracteres)');
 }
 
-    let [_, name, age, country] = text.match(regFormat);
-    age = parseInt(age);
+  const stage = usersTempRegister[id];
+  if (stage.step === 1) {
+    if (!text || text.length> 30) return m.reply('❌ Nombre inválido o muy largo. Intenta de nuevo.');
+    stage.name = text.trim();
+    stage.step = 2;
+    return m.reply('🩸 ¿Cuál es tu *edad*? (Debe ser entre 5 y 100)');
+}
 
-    if (!name || name.length> 50) return m.reply('❌ Nombre inválido o demasiado largo.');
-    if (isNaN(age) || age < 5 || age> 100) return m.reply('❌ Edad no válida.');
-    if (!country || country.length> 30) return m.reply('❌ País inválido o demasiado largo.');
+  if (stage.step === 2) {
+    let age = parseInt(text);
+    if (isNaN(age) || age < 5 || age> 100) return m.reply('❌ Edad no válida. Intenta de nuevo.');
+    stage.age = age;
+    stage.step = 3;
+    return m.reply('🌍 ¿De qué *país* eres? (Máx 30 caracteres)');
+}
 
-    let userHash = createHash('md5').update(m.sender).digest('hex');
+  if (stage.step === 3) {
+    if (!text || text.length> 30) return m.reply('❌ País no válido o demasiado largo.');
+    stage.country = text.trim();
 
-    global.db.data.users[m.sender] = {
-        name,
-        age,
-        country,
-        registered: true,
-        regTime: Date.now(),
-        id: userHash
+    global.db.data.users[id] = {
+      name: stage.name,
+      age: stage.age,
+      country: stage.country,
+      registered: true,
+      regTime: Date.now(),
+      id: require('crypto').createHash('sha256').update(id).digest('hex')
 };
 
-    let confirmMsg = `🎉 *Registro exitoso!*\n\n📂 Tus datos:\n👤 *Nombre:* ${name}\n🎂 *Edad:* ${age} años\n🌍 *País:* ${country}\n🆔 *Código:* ${userHash}`;
+    delete usersTempRegister[id];
 
-    await conn.sendMessage(m.chat, {
-        image: { url: imageUrl},
-        caption: confirmMsg
-});
+    const response = `
+🎊 *¡Registro completo!*
 
-    await conn.sendMessage(m.chat, {
-        text: `✅ *Verificación completada!*\n\nTu registro ha sido validado y guardado correctamente.`,
-});
+👤 *Nombre:* ${global.db.data.users[id].name}
+🩸 *Edad:* ${global.db.data.users[id].age}
+🌎 *País:* ${global.db.data.users[id].country}
+🆔 *ID:* ${global.db.data.users[id].id.slice(0, 8)}...
+
+Bienvenido(a) al sistema.
+`.trim();
+
+    return conn.sendMessage(m.chat, { text: response}, { quoted: m});
+}
 };
 
-handler.help = ['registrar <nombre.edad.país>'];
+handler.command = ['reg'];
 handler.tags = ['registro'];
-handler.command = ['registrar', 'reg'];
-
+handler.help = ['iniciarregistro'];
 export default handler;
