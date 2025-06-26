@@ -86,7 +86,7 @@ const pins = async (judul) => {
 };
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return conn.reply(m.chat, ` Ingresa un texto. Ejemplo: .pinterest Meliodas-Bot`, m, );
+  if (!text) return conn.reply(m.chat, `▧⃯⃟৴ํฺ͘.•🛸 𝐢𝐧𝐠𝐫𝐞𝐬𝐚 𝐮𝐧 𝐭𝐞𝐱𝐭𝐨 𝐄𝐣𝐞𝐦𝐩𝐥𝐨: .𝐩𝐢𝐧 𝐌𝐞𝐥𝐢𝐨𝐝𝐚𝐬-𝐕𝟐`, m, );
   
 
   try {
