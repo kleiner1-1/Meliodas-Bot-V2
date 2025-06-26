@@ -1,16 +1,16 @@
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
 let handler = async (m, { conn, text }) => {
-  if (!text) throw m.reply('🎧 Ingresa el nombre de una canción para buscar.');
+  if (!text) throw m.reply(`💨 Por favor, ingresa el nombre de una canción de Spotify.`);
 
-  await m.react('🔍');
+  await m.react('🕒');
 
   let res = await fetch(`https://api.nekorinn.my.id/downloader/spotifyplay?q=${encodeURIComponent(text)}`);
   let json = await res.json();
 
-  if (!json.result) throw m.reply('❌ No se encontró la canción.');
+  if (!json.result || !json.result.downloadUrl) return m.reply('❌ No se pudo obtener la canción.');
 
-  let { title, thumbnail, duration, downloadUrl } = json.result;
+  const { title, thumbnail, duration, downloadUrl } = json.result;
 
   await conn.sendMessage(m.chat, {
     image: { url: thumbnail },
@@ -19,12 +19,17 @@ let handler = async (m, { conn, text }) => {
 │🎶 *${title}*
 │⏱️ ${duration}
 ╰────────────────────
-    `.trim()
+`.trim()
   }, { quoted: m });
 
-  const steps = ['▰▱▱▱▱▱▱▱▱▱ 10%', '▰▰▰▰▱▱▱▱▱▱ 50%', '▰▰▰▰▰▰▰▰▰▰ 100%'];
+  const steps = [
+    '▰▱▱▱▱▱▱▱▱▱ 10%',
+    '▰▰▰▰▱▱▱▱▱▱ 50%',
+    '▰▰▰▰▰▰▰▰▰▰ 100%'
+  ];
+
   for (let step of steps) {
-    await m.reply(`📡 Cargando... ${step}`);
+    await m.reply(`📥 Descargando... ${step}`);
     await new Promise(r => setTimeout(r, 1000));
   }
 
