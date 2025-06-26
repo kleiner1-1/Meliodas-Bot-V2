@@ -28,7 +28,7 @@ const handler = async (m, { conn, text, command }) => {
 
   await conn.sendFile(m.chat, await (await fetch(video.thumbnail)).buffer(), "image.jpg", cap, m);
 
-  const urlAudio = `https://api.sylphy.xyz/download/ytmp3?url=${encodeURIComponent(video.url)}&apikey=${APIKEY}`;
+  const urlAudio = `https://www.apis-anomaki.zone.id/downloader/yta?url=joji}`;
   const urlVideo = `https://api.sylphy.xyz/download/ytmp4?url=${encodeURIComponent(video.url)}&apikey=${APIKEY}`;
 
   if (command === "play") {
