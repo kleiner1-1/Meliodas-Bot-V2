@@ -45,7 +45,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     }
   } finally {
     if (stiker) {
-      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, rcanal)
+      conn.sendFile(m.chat, stiker, 'sticker.webp', '', m,rcanal)
     } else {
       return conn.reply(m.chat, `𝙚𝙣𝙫𝙞𝙖 𝙪𝙣𝙖 𝙛𝙤𝙩𝙤 𝙤 𝙫𝙞𝙙𝙚𝙤 𝙥𝙖𝙧𝙖 𝙦𝙪𝙚 𝙨𝙚𝙖 𝙘𝙤𝙣𝙫𝙚𝙧𝙩𝙞𝙙𝙤 𝙚𝙣 𝙨𝙩𝙞𝙠𝙚𝙧 🫴 .`, ) 
     }
