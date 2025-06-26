@@ -27,7 +27,7 @@ let handler = async (m, { conn, isRowner }) => {
     Sisked += `│ 💸 *Actividad ∙* ${muptime}\n`;
     Sisked += `╰─⬣`;
     
-    await conn.sendFile(m.chat, pp, 'nino.jpg', Sisked, fkontak, null, rcanal);
+    await conn.sendFile(m.chat, pp, 'nino.jpg', Sisked, m, null, rcanal);
 }
 
 handler.help = ['status'];
