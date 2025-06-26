@@ -6,7 +6,7 @@ let handler = async (m, { isPrems, conn}) => {
     throw `❗ *YA RECLAMASTE TU COFRE* ❗\n🕰️ Vuelve en *${msToTime(time - new Date())}* para reclamar nuevamente.`
 }
 
-  let img = 'https://files.catbox.moe/ltq7ph.jpg'
+  let img = 'https://qu.ax/pjKoG.jpg'
   let texto = `
 ╭──🎮 *GUÍA DE COMANDOS RÁPIDOS* 🎮──╮
 │
