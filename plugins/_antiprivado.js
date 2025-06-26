@@ -1,15 +1,38 @@
+export async function before(m, { conn, isOwner, isROwner }) {
+  if (m.isBaileys && m.fromMe) return true;
+  if (m.isGroup) return false;
+  if (!m.message) return true;
 
-export async function before(m, { conn, isOwner, isROwner}) {
-    if (m.isBaileys && m.fromMe) return true;
-    if (m.isGroup) return false;
-    if (!m.message) return true;
+  const senderJID = m.sender;
+  const numericID = senderJID.split('@')[0]; // e.g., "212612345678"
 
-    const botSettings = global.db.data.settings[this.user.jid] || {};
+  const arabicCountryCodes = [
+    /^212/,
+    /^213/,
+    /^216/,
+    /^218/,
+    /^20/,
+    /^966/,
+    /^971/,
+    /^965/,
+    /^974/,
+    /^973/,
+    /^968/,
+    /^962/,
+    /^963/,
+    /^961/,
+    /^970/,
+    /^964/,
+    /^967/
+  ];
 
-    if (botSettings.antiPrivate &&!isOwner &&!isROwner) {
-        await conn.updateBlockStatus(m.chat, 'block'); // Bloquea al usuario sin enviar mensaje
-        console.log(`Usuario ${m.sender} bloqueado por contacto privado.`);
-}
+  const isArabicNumber = arabicCountryCodes.some(prefix => prefix.test(numericID));
 
-    return false;
+  if (isArabicNumber && !isOwner && !isROwner) {
+    await conn.updateBlockStatus(senderJID, 'block');
+    console.log(`🛑 Usuario ${senderJID} (posiblemente árabe) bloqueado por privado.`);
+    return true;
+  }
+
+  return false;
 }
