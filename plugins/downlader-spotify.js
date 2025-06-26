@@ -1,5 +1,3 @@
-//Dv.yer
-
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, text }) => {
@@ -14,7 +12,6 @@ let handler = async (m, { conn, text }) => {
 
   let { title, thumbnail, duration, downloadUrl } = json.result;
 
-
   await conn.sendMessage(m.chat, {
     image: { url: thumbnail },
     caption: `
@@ -25,16 +22,16 @@ let handler = async (m, { conn, text }) => {
     `.trim()
   }, { quoted: m });
 
-  
   const steps = ['▰▱▱▱▱▱▱▱▱▱ 10%', '▰▰▰▰▱▱▱▱▱▱ 50%', '▰▰▰▰▰▰▰▰▰▰ 100%'];
   for (let step of steps) {
     await m.reply(`📡 Cargando... ${step}`);
-    await new Promise(res => setTimeout(res, 1000));
+    await new Promise(r => setTimeout(r, 1000));
   }
 
-  // Enviar audio limpio
+  let audioBuffer = await fetch(downloadUrl).then(res => res.buffer());
+
   await conn.sendMessage(m.chat, {
-    audio: { url: downloadUrl },
+    audio: audioBuffer,
     mimetype: 'audio/mpeg'
   }, { quoted: m });
 
