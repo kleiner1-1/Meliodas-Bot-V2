@@ -5,7 +5,7 @@
 
 
 
-var handler = async (m, { conn, participants, isAdmin, isBotAdmin, args }) => {
+var handler = async (m, { conn, participants, isAdmin, isBotAdmin, args, usedPrefix }) => {
     const emoji = '♫︎';
     const emoji2 = '✿︎';
 
