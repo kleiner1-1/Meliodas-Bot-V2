@@ -51,16 +51,16 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             const groupInfo = await conn.groupMetadata(fullGroupLink); 
 
             let responseText = `
-💬 Información del Grupo 💬 
-
-┆ 📝 Nombre:* ${groupInfo.subject || 'No disponible'}
-┆ 🆔 ID:* ${groupInfo.id || 'No disponible'}
-┆ 👥 Miembros:* ${groupInfo.size || 0}
-┆ 👑 Creador/Administrador:* ${groupInfo.owner ? `@${groupInfo.owner.split('@')[0]}` : 'No disponible'}
-┆
-┆ 📄 Descripción:* ${groupInfo.desc || "Sin descripción disponible."}
-
-
+*╭┈┈┈「 💬 Información del Grupo 💬 」┈┈┈╮*
+*┆*
+*┆ 📝 Nombre:* ${groupInfo.subject || 'No disponible'}
+*┆ 🆔 ID:* ${groupInfo.id || 'No disponible'}
+*┆ 👥 Miembros:* ${groupInfo.size || 0}
+*┆ 👑 Creador/Administrador:* ${groupInfo.owner ? `@${groupInfo.owner.split('@')[0]}` : 'No disponible'}
+*┆*
+*┆ 📄 Descripción:* ${groupInfo.desc || "Sin descripción disponible."}
+*┆*
+*╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯*
             `.trim();
             await conn.reply(m.chat, responseText, m, { mentions: groupInfo.owner ? [groupInfo.owner] : [] });
             m.react("✅");
@@ -75,14 +75,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             const communityInfo = await conn.communityMetadata(communityId); 
 
             let responseText = `
- 🏘️ Información de la Comunidad ↘️
-
-┆ 📝 Nombre:* ${communityInfo.name || 'No disponible'}
-┆ 🆔 ID:* ${communityInfo.id || 'No disponible'}
-┆ 👥 Miembros:* ${communityInfo.members?.length || 0}
-┆ 📄 Descripción:* ${communityInfo.description || "Sin descripción disponible."}
-
-
+*╭┈┈┈「 🏘️ Información de la Comunidad 🏘️ 」┈┈┈╮*
+*┆*
+*┆ 📝 Nombre:* ${communityInfo.name || 'No disponible'}
+*┆ 🆔 ID:* ${communityInfo.id || 'No disponible'}
+*┆ 👥 Miembros:* ${communityInfo.members?.length || 0}
+*┆ 📄 Descripción:* ${communityInfo.description || "Sin descripción disponible."}
+*┆*
+*╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯*
             `.trim();
             await conn.reply(m.chat, responseText, m);
             m.react("✅");
