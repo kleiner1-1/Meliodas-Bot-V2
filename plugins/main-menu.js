@@ -8,7 +8,7 @@ const clockString = ms => {
   return [h, m, s].map(v => v.toString().padStart(2, '0')).join(':')
 }
 
-const imagen = "https://qu.ax/DDauy.mp4";
+const video = "https://qu.ax/DDauy.mp4";
 
 const menuHeader = `
 
