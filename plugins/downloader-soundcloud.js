@@ -5,11 +5,11 @@ import fetch from 'node-fetch';
 let handler = async (m, { conn, usedPrefix, command, text }) => {
   if (!text) {
     await m.react('📀');
-    return m.reply(`╭─⬣「 *Barboza Ai* 」⬣
+    return m.reply(`╭─⬣「 🐉𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐕𝟐 」⬣
 │  ❗ *Uso Incorrecto*
 │  ➤ Ingresa un texto para buscar en YouTube.
 │  ➤ *Ejemplo:* ${usedPrefix + command} Shakira
-╰────────────⬣`);
+╰`);
   }
 
   try {
@@ -21,23 +21,23 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     if (!searchData?.data || searchData.data.length === 0) {
       await m.react('🔴');
-      return m.reply(`╭─⬣「 *Barboza Ai* 」⬣
+      return m.reply(`╭─⬣「 *🐉𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐕𝟐* 」⬣
 │  ⚠️ *Sin Resultados*
 │  ➤ No se encontraron resultados para:
 │  ➤ *"${text}"*
-╰────────────⬣`);
+╰`);
     }
 
     const video = searchData.data[0];
 
-    let info = `╭─⬣「 *Barboza Ai* 」⬣
+    let info = `╭─⬣「 *🐉𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐕𝟐* 」⬣
 │  ≡◦🎵 *Título:* ${video.title}
 │  ≡◦📺 *Canal:* ${video.author.name}
 │  ≡◦⏱️ *Duración:* ${video.duration}
 │  ≡◦👁️ *Vistas:* ${video.views}
 │  ≡◦📅 *Publicado:* ${video.publishedAt}
 │  ≡◦🔗 *Enlace:* ${video.url}
-╰────────────⬣`;
+╰`;
 
     await conn.sendMessage(m.chat, {
       image: { url: video.image },
@@ -53,7 +53,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
       return m.reply(`╭─⬣「 *Barboza Ai* 」⬣
 │  ❌ *Error al descargar*
 │  ➤ No se pudo obtener el audio del video.
-╰────────────⬣`);
+╰`);
     }
 
     await conn.sendMessage(m.chat, {
@@ -66,10 +66,10 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
   } catch (error) {
     console.error(error);
     await m.react('🔴');
-    m.reply(`╭─⬣「 *Barboza Ai* 」⬣
+    m.reply(`╭─⬣「 *🐉𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐕𝟐* 」⬣
 │  ❌ *Error Interno*
 │  ➤ ${error.message}
-╰────────────⬣`);
+╰`);
   }
 };
 
