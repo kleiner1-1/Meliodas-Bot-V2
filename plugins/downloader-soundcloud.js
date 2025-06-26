@@ -50,7 +50,7 @@ let handler = async (m, { conn, usedPrefix, command, text }) => {
 
     if (!downloadData?.result?.download?.url) {
       await m.react('🔴');
-      return m.reply(`╭─⬣「 *Barboza Ai* 」⬣
+      return m.reply(`╭─⬣「 *🐉𝐌𝐄𝐋𝐈𝐎𝐃𝐀𝐒 𝐕𝟐* 」⬣
 │  ❌ *Error al descargar*
 │  ➤ No se pudo obtener el audio del video.
 ╰`);
