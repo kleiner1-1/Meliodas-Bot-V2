@@ -27,7 +27,7 @@ let handler = async (m, { conn, text, command }) => {
 
     m.reply(`encontre ${detailJson.data.stickers.length} stiker/s`)
 
-    let maxSend = 10
+    let maxSend = 5
     for (let i = 0; i < Math.min(detailJson.data.stickers.length, maxSend); i++) {
       const img = detailJson.data.stickers[i]
       let sticker = new Sticker(img.imageUrl, {
