@@ -1,29 +1,48 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!text) {
-        return conn.reply(m.chat, `*Uso correcto:* ${usedPrefix}${command} <enlace de canal/grupo/comunidad>`, m);
+        return conn.reply(m.chat, `*Uso correcto:*\n\nPara un canal: ${usedPrefix}${command} <enlace del canal>\nPara un grupo: ${usedPrefix}${command} <enlace del grupo>\nPara una comunidad: ${usedPrefix}${command} <enlace de la comunidad>`, m);
     }
 
-    const channelRegex = /https:\/\/whatsapp\.com\/channel\/([0-9A-Za-z]+)/i;
-    const groupRegex = /(https:\/\/chat\.whatsapp\.com\/)([0-9A-Za-z]{22})/i;
-    const communityRegex = /https:\/\/whatsapp\.com\/community\/([0-9A-Za-z]+)/i;
+    const whatsappLinkRegex = /(https?:\/\/(?:www\.)?chat\.whatsapp\.com\/([0-9A-Za-z]{22}))|(https?:\/\/whatsapp\.com\/channel\/([0-9A-Za-z]+))|(https?:\/\/whatsapp\.com\/community\/([0-9A-Za-z]+))/i;
 
-    let matchChannel = text.match(channelRegex);
-    let matchGroup = text.match(groupRegex);
-    let matchCommunity = text.match(communityRegex);
+    let match = text.match(whatsappLinkRegex);
 
-    if (matchChannel) {
-        const channelId = matchChannel[1];
-        try {
-            const info = await conn.newsletterMetadata("invite", channelId);
+    if (!match) {
+        return conn.reply(m.chat, `*Enlace inválido:* Por favor, proporciona un enlace de WhatsApp válido para un canal, grupo o comunidad.`, m);
+    }
 
-            const creationDate = new Date(info.creation_time * 1000);
-            const formattedDate = creationDate.toLocaleDateString("es-ES", {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-            });
+    let type = '';
+    let identifier = '';
 
-            let responseText = `
+    if (match[2]) {
+        type = 'group';
+        identifier = match[2];
+    } else if (match[4]) {
+        type = 'channel';
+        identifier = match[4];
+    } else if (match[6]) {
+        type = 'community';
+        identifier = match[6];
+    }
+
+    if (!type || !identifier) {
+        return conn.reply(m.chat, `*No se pudo identificar el tipo de enlace o extraer el ID.* Asegúrate de que el enlace sea correcto.`, m);
+    }
+
+    try {
+        let responseText = '';
+        switch (type) {
+            case 'channel':
+                const info = await conn.newsletterMetadata("invite", identifier);
+
+                const creationDate = new Date(info.creation_time * 1000);
+                const formattedDate = creationDate.toLocaleDateString("es-ES", {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                responseText = `
 *╭┈┈┈「 🌿 Información del Canal 🌿 」┈┈┈╮*
 *┆*
 *┆ 📝 Nombre:* ${info.name || 'No disponible'}
@@ -37,20 +56,14 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *┆ 📄 Descripción:* ${info.description || "Sin descripción disponible."}
 *┆*
 *╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯*
-            `.trim();
-            await conn.reply(m.chat, responseText, m);
-            m.react("✅");
-        } catch (error) {
-            console.error("Error al obtener información del canal:", error);
-            await conn.reply(m.chat, `*Error al procesar la solicitud del canal:* No se pudo obtener la información. Detalle: ${error.message}`, m);
-        }
-    } 
-    else if (matchGroup) {
-        const fullGroupLink = matchGroup[0]; 
-        try {
-            const groupInfo = await conn.groupMetadata(fullGroupLink); 
+                `.trim();
+                break;
 
-            let responseText = `
+            case 'group':
+                const fullGroupLink = match[1];
+                const groupInfo = await conn.groupMetadata(fullGroupLink); 
+
+                responseText = `
 *╭┈┈┈「 💬 Información del Grupo 💬 」┈┈┈╮*
 *┆*
 *┆ 📝 Nombre:* ${groupInfo.subject || 'No disponible'}
@@ -61,20 +74,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *┆ 📄 Descripción:* ${groupInfo.desc || "Sin descripción disponible."}
 *┆*
 *╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯*
-            `.trim();
-            await conn.reply(m.chat, responseText, m, { mentions: groupInfo.owner ? [groupInfo.owner] : [] });
-            m.react("✅");
-        } catch (error) {
-            console.error("Error al obtener información del grupo:", error);
-            await conn.reply(m.chat, `*Error al procesar la solicitud del grupo:* No se pudo obtener la información. Asegúrate de que el enlace sea válido y el bot esté en el grupo o tenga acceso para ver su metadata. Detalle: ${error.message}`, m);
-        }
-    } 
-    else if (matchCommunity) {
-        const communityId = matchCommunity[1];
-        try { 
-            const communityInfo = await conn.communityMetadata(communityId); 
+                `.trim();
+                break;
 
-            let responseText = `
+            case 'community':
+                const communityInfo = await conn.communityMetadata(identifier); 
+
+                responseText = `
 *╭┈┈┈「 🏘️ Información de la Comunidad 🏘️ 」┈┈┈╮*
 *┆*
 *┆ 📝 Nombre:* ${communityInfo.name || 'No disponible'}
@@ -83,16 +89,21 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 *┆ 📄 Descripción:* ${communityInfo.description || "Sin descripción disponible."}
 *┆*
 *╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈╯*
-            `.trim();
-            await conn.reply(m.chat, responseText, m);
-            m.react("✅");
-        } catch (error) {
-            console.error("Error al obtener información de la comunidad:", error);
-            await conn.reply(m.chat, `*Error al procesar la solicitud de la comunidad:* No se pudo obtener la información. Detalle: ${error.message}`, m);
+                `.trim();
+                break;
         }
-    } 
-    else {
-        return conn.reply(m.chat, `*Enlace inválido:* Por favor, proporciona un enlace de WhatsApp válido para un canal, grupo o comunidad.`, m);
+
+        await conn.reply(m.chat, responseText, m, { mentions: type === 'group' && groupInfo.owner ? [groupInfo.owner] : [] });
+        m.react("✅");
+
+    } catch (error) {
+        console.error(`Error al obtener información de ${type}:`, error);
+        let errorMessage = `*Error al procesar la solicitud de ${type}:* No se pudo obtener la información.`;
+        if (type === 'group') {
+            errorMessage += ` Asegúrate de que el enlace sea válido y el bot esté en el grupo o tenga acceso para ver su metadata.`;
+        }
+        errorMessage += ` Detalle: ${error.message}`;
+        await conn.reply(m.chat, errorMessage, m);
     }
 };
 
