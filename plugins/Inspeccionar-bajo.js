@@ -33,7 +33,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         let responseText = '';
         switch (type) {
             case 'channel':
-                const info = await conn.newsletterMetadata("invite", identifier);
+                const info = await conn.getChannelMetadata(identifier); // Replace with actual function
 
                 const creationDate = new Date(info.creation_time * 1000);
                 const formattedDate = creationDate.toLocaleDateString("es-ES", {
