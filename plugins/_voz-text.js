@@ -2,56 +2,70 @@ import fs from 'fs'
 import path from 'path'
 import ffmpeg from 'fluent-ffmpeg'
 import ffmpegPath from 'ffmpeg-static'
-import { transcribe } from '@ai-zen/whisper'
+import { SpeechClient } from '@google-cloud/speech'
 
 ffmpeg.setFfmpegPath(ffmpegPath)
 
-let handler = async (m, { conn, args }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
   try {
-    if (!m.quoted || !m.quoted.audio) {
-      return m.reply('🎙️ Responde a un audio con el comando *⚡voztext* para transcribirlo.')
+    if (!m.quoted || !m.quoted.mimetype || !m.quoted.mimetype.includes('audio')) {
+      return m.reply(`🎙️ Responde a un audio con el comando *${usedPrefix + command}* para transcribirlo.`)
     }
 
-    const media = await m.quoted.download()
-    const inputPath = './tmp/input.ogg'
-    const outputPath = './tmp/output.wav'
+    const inputDir = './tmp'
+    if (!fs.existsSync(inputDir)) fs.mkdirSync(inputDir)
 
-    if (!fs.existsSync('./tmp')) fs.mkdirSync('./tmp')
+    const inputPath = path.join(inputDir, `audio.ogg`)
+    const outputPath = path.join(inputDir, `audio.flac`)
 
-    fs.writeFileSync(inputPath, media)
+    const audioBuffer = await m.quoted.download()
+    fs.writeFileSync(inputPath, audioBuffer)
 
-
+    
     await new Promise((resolve, reject) => {
       ffmpeg(inputPath)
-        .audioCodec('pcm_s16le')
-        .format('wav')
+        .toFormat('flac')
+        .audioCodec('flac')
         .save(outputPath)
         .on('end', resolve)
         .on('error', reject)
     })
 
+    m.reply('🔍 Procesando con inteligencia de Google...')
 
-    m.reply('🧠 Transcribiendo el audio...')
+    const client = new SpeechClient({
+      keyFilename: './google-credentials.json' 
+    }) 
 
-    const result = await transcribe(outputPath)
+    const audioBytes = fs.readFileSync(outputPath).toString('base64')
 
-    const text = result.text?.trim()
-    if (!text) return m.reply('❌ No se pudo transcribir el audio.')
+    const [response] = await client.recognize({
+      audio: { content: audioBytes },
+      config: {
+        encoding: 'FLAC',
+        sampleRateHertz: 44100,
+        languageCode: 'es-ES', 
+      },
+    })
 
-    m.reply(`🗣️ *Texto detectado:*\n\n${text}`)
+    const transcription = response.results.map(r => r.alternatives[0].transcript).join('\n').trim()
 
+    if (!transcription) {
+      return m.reply('❌ No se detectó texto en el audio.')
+    }
+
+    m.reply(`🗣️ *Texto detectado:*\n\n${transcription}`)
 
     fs.unlinkSync(inputPath)
     fs.unlinkSync(outputPath)
+
   } catch (e) {
     console.error(e)
     m.reply('⚠️ Error al procesar el audio.')
   }
 }
 
-handler.command = ['voztext'];
-//handler.help = handler.command;
-handler.tags = ['ia'];
-
-
+handler.command = ['voztext']
+handler.tags = ['ia']
+handler.help = ['voztext']
 export default handler
