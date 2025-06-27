@@ -1,12 +1,12 @@
 {
-  "name": "Barboza",
+  "name": "Adrian",
   "version": "2.2.0",
   "description": "Super WhatsApp Bot Multi Device",
   "main": "index.js",
   "type": "module",
   "directories": {
     "lib": "lib",
-    "src": "src",
+    "src": "storage",
     "plugins": "plugins"
   },
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/meldexzz/bolibotmensual.git",
   "author": {
-    "name": "meldexzz"
+    "name": "Adrian"
   },
   "repository": {
     "type": "git",
