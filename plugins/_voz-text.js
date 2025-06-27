@@ -49,9 +49,9 @@ let handler = async (m, { conn, args }) => {
   }
 }
 
-handler.command = ['voztext']
-handler.help = handler.command;
+handler.command = ['voztext'];
+//handler.help = handler.command;
 handler.tags = ['ia'];
-handler.register = true
+
 
 export default handler
