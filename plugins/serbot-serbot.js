@@ -457,6 +457,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
             }
 async function joinChannels(conn) {
-await conn.newsletterFollow("120363414007802886@newsletter")
-conn.newsletterFollow("120363419364337473@newsletter")
+await conn.newsletterFollow("120363419009027760@newsletter")
+conn.newsletterFollow("120363419009027760@newsletter")
       }
