@@ -27,11 +27,10 @@ let crm3 = "Sinfo-Donar.js";
 let crm4 = " _autoresponder.js info-bot.js";
 let drm1 = "";
 let drm2 = "";
-let rtx = "*Convertirse en sub bot / JadiBot*\n\n* Utilice otro celular para escanear este codigo QR o escanea el codigo mediante una PC para convertirte en Sub Bot*\n\n`1`  Haga clic en los tres puntos en la esquina superior derecha\n\n`2`  Toca dispositivos vinculados\n\n`3`  Escanee este codigo QR para iniciar sesion\n\n *Este codigo QR expira en 45 segundos*";
-let rtx2 = "*Convertirse en sub bot / JadiBot*\n\n*Usa este Codigo para convertirte en un Sub Bot*\n\n`1`  Haga clic en los tres puntos en la esquina superior derecha\n\n`2`  Toca dispositivos vinculados\n\n`3`  Selecciona Vincular con el numero de telefono\n\n`4`  Escriba el Codigo\n\n *𝐄𝐬𝐭𝐞 𝐜𝐨𝐝𝐢𝐠𝐨 𝐬𝐨𝐥𝐨 𝐟𝐮𝐧𝐜𝐢𝐨𝐧𝐚 𝐞𝐧 𝐞𝐧 𝐞𝐥 𝐧𝐮𝐦𝐞𝐫𝐨 𝐪𝐮𝐞 𝐥𝐨 𝐬𝐨𝐥𝐢𝐜𝐢𝐭𝐚𝐬𝐭𝐞  ";
+let rtx = "*Convertirse en sub bot✨ / JadiBot*\n\n*ðŸŒ¼ Utilice otro celular para escanear este codigo QR o escanea el codigo mediante una PC para convertirte en Sub Bot*\n\n`1` Â» Haga clic en los tres puntos en la esquina superior derecha\n\n`2` Â» Toca dispositivos vinculados\n\n`3` Â» Escanee este codigo QR para iniciar sesiÃ³n\n\nðŸŒ¼ *Este cÃ³digo QR expira en 45 segundos*";
+let rtx2 = "*Convertirse en sub bot✨ / JadiBot*\n\n*ðŸŒ¼ Usa este CÃ³digo para convertirte en un Sub Bot*\n\n`1` Â» Haga clic en los tres puntos en la esquina superior derecha\n\n`2` Â» Toca dispositivos vinculados\n\n`3` Â» Selecciona Vincular con el nÃºmero de telÃ©fono\n\n`4` Â» Escriba el CÃ³digo\n\nðŸŒ¼ *Este cÃ³digo solo funciona en en el nÃºmero que lo solicitÃ³*";
 
 if (global.conns instanceof Array) {
-  console.log();
 } else {
   global.conns = [];
 }
@@ -167,15 +166,13 @@ async function loadSubbots() {
 }
 loadSubbots().catch(console.error);
 
-// Handler principal
 let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
   if (!global.db.data.settings[conn.user.jid].jadibotmd) {
-    return conn.reply(msg.chat, "𝙚𝙨𝙩𝙚 𝙘𝙤𝙢𝙖𝙣𝙙𝙤́ 𝙚𝙨𝙩𝙖 𝙙𝙚𝙨𝙝𝙖𝙗𝙞𝙡𝙞𝙩𝙖𝙙𝙤 𝙥𝙤𝙧 𝙢𝙞 𝙘𝙧𝙚𝙖𝙙𝙤𝙧 🐉↘️", );
+    return conn.reply(msg.chat, "*ðŸŒ¼ Este Comando estÃ¡ deshabilitado por mi creador.*", msg, rcanal);
   }
 
-  // Verificar lÃ­mite de subbots
   if (global.conns.length >= MAX_SUBBOTS) {
-    return conn.reply(msg.chat, ` Lo siento, se ha alcanzado el lÃ­mite de ${MAX_SUBBOTS} subbots. Por favor, intenta mÃ¡s tarde.*`, msg, );
+    return conn.reply(msg.chat, `*â€ Lo siento, se ha alcanzado el lÃ­mite de ${MAX_SUBBOTS} subbots. Por favor, intenta mÃ¡s tarde.*`, msg, rcanal);
   }
 
   let user = conn;
@@ -274,8 +271,8 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
               forwardingScore: 999,
               isForwarded: true,
               forwardedNewsletterMessageInfo: {
-              //  newsletterJid: '120363375378707428@newsletter', 
-             //   newsletterName: 'Barboza', 
+                newsletterJid: '120363375378707428@newsletter', 
+                newsletterName: 'Barboza', 
                 serverMessageId: -1
               }
             }
@@ -290,8 +287,8 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
               forwardingScore: 999,
               isForwarded: true,
               forwardedNewsletterMessageInfo: {
-             //   newsletterJid: '120363375378707428@newsletter', 
-              //  newsletterName: 'barboza',
+                newsletterJid: '120363375378707428@newsletter', 
+                newsletterName: 'barboza',
                 serverMessageId: -1
               }
             }
@@ -308,8 +305,8 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
               forwardingScore: 999,
               isForwarded: true,
               forwardedNewsletterMessageInfo: {
-             //   newsletterJid: '120363375378707428@newsletter', 
-           //     newsletterName: 'Barboza', 
+                newsletterJid: '120363375378707428@newsletter', 
+                newsletterName: 'Barboza', 
                 serverMessageId: -1
               }
             }
@@ -339,7 +336,7 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
           console.log(disconnectCode);
           if (disconnectCode == 405) {
             await fs.unlinkSync("./" + jadi + "/" + userName + "/creds.json");
-            return await msg.reply("â�€ Reenvia nuevamente el comando.");
+            return await msg.reply("â€ Reenvia nuevamente el comando.");
           }
           if (disconnectCode === DisconnectReason.restartRequired) {
             initSubBot();
@@ -354,7 +351,7 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
             await initSubBot();
             return console.log("\nðŸŒ¼ConexiÃ³n perdida con el servidor, reconectando....");
           } else if (disconnectCode === DisconnectReason.badSession) {
-            return await msg.reply("ðŸŒ¼ La conexiÃ³n se ha cerrado, deberÃ¡ de conectarse manualmente usando el comando *.serbot* y reescanear el nuevo *QR.* Que fuÃ© enviada la primera vez que se hizo *SubBot*");
+            return await msg.reply("ðŸŒ¼ La conexiÃ³n se ha cerrado, deberÃ¡ de conectarse manualmente usando el comando *.serbot* y reescanear el nuevo *QR.* Que fuÃ³ enviada la primera vez que se hizo *SubBot*");
           } else if (disconnectCode === DisconnectReason.timedOut) {
             await closeConnection(false);
             return console.log("\nðŸŒ¼ Tiempo de conexiÃ³n agotado, reconectando....");
@@ -371,12 +368,9 @@ let handler = async (msg, { conn, args, usedPrefix, command, isOwner }) => {
           subBot.isInit = true;
           global.conns.push(subBot);
           await user.sendMessage(msg.chat, {
-            text: args[0] ? "â�€ *EstÃ¡ conectado(a)!! Por favor espere se estÃ¡ cargando los mensajes...*\n\nðŸŒ¼ *Opciones Disponibles:*\n*Â» " + usedPrefix + "pausarai _(Detener la funciÃ³n Sub Bot)_*\n*Â» " + usedPrefix + "deletesession _(Borrar todo rastro de Sub Bot)_*\n*Â» " + usedPrefix + "serbot _(Nuevo cÃ³digo QR o Conectarse si ya es Sub Bot)_*" : "*â�€ ConexiÃ³n con Ã©xito al WhatsApp*"
+            text: args[0] ? "â€ *EstÃ¡ conectado(a)!! Por favor espere se estÃ¡ cargando los mensajes...*\n\nðŸŒ¼ *Opciones Disponibles:*\n*Â» " + usedPrefix + "pausarai _(Detener la funciÃ³n Sub Bot)_*\n*Â» " + usedPrefix + "deletesession _(Borrar todo rastro de Sub Bot)_*\n*Â» " + usedPrefix + "serbot _(Nuevo cÃ³digo QR o Conectarse si ya es Sub Bot)_*" : "*â€ ConexiÃ³n con Ã©xito al WhatsApp*"
           }, { quoted: msg });
           if (!args[0]) {
-            /* user.sendMessage(msg.chat, {
-               text: usedPrefix + command + " " + Buffer.from(fs.readFileSync("./" + jadi + "/" + userName + "/creds.json"), "utf-8").toString("base64")
-             }, { quoted: msg });*/
           }
         }
       }
@@ -462,3 +456,7 @@ const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
             }
+async function joinChannels(conn) {
+await conn.newsletterFollow("120363414007802886@newsletter")
+conn.newsletterFollow("120363419364337473@newsletter")
+      }
